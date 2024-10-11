@@ -131,6 +131,7 @@ label {
 .toDoList {
     padding-right: 40px;
     padding-top: 100px;
+    margin-top: 105px;
 }
 
 body.lightmode {
