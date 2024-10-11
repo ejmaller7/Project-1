@@ -69,47 +69,55 @@
 // const year = [january,february,march,april,may,june,july,august,september,october,november,december];
 // const week = [sunday,monday,tuesday,wednesday,thursday,friday,saturday];
 
-const thirtyOne = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31];
-const thirty = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30];
-const twentyEight = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28];
-
-const months = [
-  { name: "January", days: thirtyOne},
-  { name: "February", days: twentyEight},
-  { name: "March", days: thirtyOne},
-  { name: "April", days: thirty},
-  { name: "May", days: thirtyOne},
-  { name: "June", days: thirty},
-  { name: "July", days: thirtyOne},
-  { name: "August", days: thirtyOne},
-  { name: "September", days: thirty},
-  { name: "October", days: thirtyOne},
-  { name: "November", days: thirty},
-  { name: "December", days: thirtyOne}
-];
-
-const selectMonth = document.getElementById('selectMonth');
 const monthSelect = document.getElementById('monthSelect');
+const selectMonth = document.getElementById('selectMonth');
+const calendarBody = document.getElementById('calendarBody');
 
-function displayMonth(monthName) {
-    const month = months.find(m => m.name === monthName);
-    if (month) {
-        let tableHTML = `<table><thead><tr><th></th></tr></thead><tbody>`;
-        
-        month.days.forEach(day => {
-            tableHTML += `<tr><td>${day}</td></tr>`;
-        });
-        
-        tableHTML += `</tbody></table>`;
-        
-        selectMonth.innerHTML = `<h2>${month.name}</h2>${tableHTML}`;
-    } else {
-        selectMonth.innerHTML = `<p>Month not found.</p>`;
-    }
+
+function isLeapYear(year) {
+    return (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
 }
 
-displayMonth();
+
+function getDaysInMonth(month, year) {
+    const monthDays = [31, isLeapYear(year) ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+    return monthDays[month];
+}
+
+
+function displayMonth(monthIndex) {
+    const today = new Date();
+    const year = today.getFullYear();
+
+    const firstDay = new Date(year, monthIndex, 1).getDay(); 
+    const daysInMonth = getDaysInMonth(monthIndex, year); 
+
+    selectMonth.innerHTML = monthSelect.options[monthIndex].text;
+
+    let tableHTML = `<tr>`;
+    
+    
+    for (let i = 0; i < firstDay; i++) {
+        tableHTML += `<td></td>`;
+    }
+
+   
+    for (let day = 1; day <= daysInMonth; day++) {
+        tableHTML += `<td>${day}</td>`;
+        if ((firstDay + day) % 7 === 0) { 
+            tableHTML += `</tr><tr>`;
+        }
+    }
+
+    tableHTML += `</tr>`;
+
+    calendarBody.innerHTML = tableHTML;
+}
+
+
+displayMonth(9);
 
 monthSelect.addEventListener('change', function() {
-    displayMonth(monthSelect.value);
+    const selectedMonthIndex = parseInt(monthSelect.value);
+    displayMonth(selectedMonthIndex);
 });

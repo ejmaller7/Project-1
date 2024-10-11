@@ -25,7 +25,7 @@
             font-weight: bold;
             font-size: 20px;
           "
-          >Weather</a
+          >Weather  &#9729<</a
         >
         <button id="addTask">+</button>
         <button id="theme-toggle">Light/Dark</button>
@@ -34,84 +34,43 @@
 
     <main>
       <section class="section">
-        <section id="calendar">
-          <label>Select a Month</label>
-          <select id="monthSelect">
-            <option value="January">January</option>
-            <option value="February">February</option>
-            <option value="March">March</option>
-            <option value="April">April</option>
-            <option value="May">May</option>
-            <option value="June">June</option>
-            <option value="July">July</option>
-            <option value="August">August</option>
-            <option value="September">September</option>
-            <option value="October">October</option>
-            <option value="November">November</option>
-            <option value="December">December</option>
-        </select>
-          <h2 id="selectMonth"></h2>
-          <table style="border: 2px solid black">
-            <tbody>
-              <tr>
-                <th>Sunday</th>
-                <th>Monday</th>
-                <th>Tuesday</th>
-                <th>Wednesday</th>
-                <th>Thursday</th>
-                <th>Friday</th>
-                <th>Saturday</th>
-              </tr>
-              <article id="october">
-                <tr>
-                  <td>1</td>
-                  <td>2</td>
-                  <td>3</td>
-                  <td>4</td>
-                  <td>5</td>
-                  <td>6</td>
-                  <td>7</td>
-                </tr>
-                <tr>
-                  <td>8</td>
-                  <td>9</td>
-                  <td>10</td>
-                  <td>11</td>
-                  <td>12</td>
-                  <td>13</td>
-                  <td>14</td>
-                </tr>
-                <tr>
-                  <td>15</td>
-                  <td>16</td>
-                  <td>17</td>
-                  <td>18</td>
-                  <td>19</td>
-                  <td>20</td>
-                  <td>21</td>
-                </tr>
-                <tr>
-                  <td>22</td>
-                  <td>23</td>
-                  <td>24</td>
-                  <td>25</td>
-                  <td>26</td>
-                  <td>27</td>
-                  <td>28</td>
-                </tr>
-                <tr>
-                  <td>29</td>
-                  <td>30</td>
-                  <td>31</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-              </article>
-            </tbody>
-          </table>
-        </section>
+          <section id="calendar">
+              <label>Select a Month</label>
+              <select id="monthSelect">
+                  <option value="0">January</option>
+                  <option value="1">February</option>
+                  <option value="2">March</option>
+                  <option value="3">April</option>
+                  <option value="4">May</option>
+                  <option value="5">June</option>
+                  <option value="6">July</option>
+                  <option value="7">August</option>
+                  <option value="8">September</option>
+                  <option value="9">October</option>
+                  <option value="10">November</option>
+                  <option value="11">December</option>
+              </select>
+              
+              <h2 id="selectMonth">October</h2>
+
+              <table id="calendarTable">
+                  <thead>
+                      <tr>
+                          <th>Sunday</th>
+                          <th>Monday</th>
+                          <th>Tuesday</th>
+                          <th>Wednesday</th>
+                          <th>Thursday</th>
+                          <th>Friday</th>
+                          <th>Saturday</th>
+                      </tr>
+                  </thead>
+                  <tbody id="calendarBody">
+                      <!-- Dynamic Calendar Body goes here -->
+                  </tbody>
+              </table>
+          </section>
+      </section>
 
         <aside id="tasks">
           <section class="toDoList">

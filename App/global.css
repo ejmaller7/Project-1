@@ -73,24 +73,36 @@ body {
 
 table {
     border-collapse: collapse;
-    width: 100%
+    width: 100%;
+    border: 2px solid black;
 }
 
-tr{
-    text-align:center;
+tr, th, td {
+    text-align: center;
     border: 1px solid black;
-    padding: 5px
+    padding: 5px;
 }
 
 td {
-    width: 150px;
-    height: 150px;
-    border: 1px solid black;
-    padding: 5px;
-    margin: 0;
-    text-align: left;
+    width: 100px;
+    height: 100px;
     vertical-align: top;
+}
 
+select {
+    display: block;
+    margin: 20px auto;
+    padding: 5px;
+}
+
+h2 {
+    text-align: center;
+}
+
+label {
+    text-align: center;
+    display: block;
+    font-size: 18px;
 }
 
 #tasks {
