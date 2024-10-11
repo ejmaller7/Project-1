@@ -17,16 +17,7 @@
     <header class="header">
       <h1>To Do Calendar</h1>
       <nav>
-        <a
-          href="#"
-          style="
-            text-decoration: none;
-            color: #fff;
-            font-weight: bold;
-            font-size: 20px;
-          "
-          >Weather  &#9729<</a
-        >
+        <a href="#" id="weather">Weather  &#9729</a>
         <button id="addTask">+</button>
         <button id="theme-toggle">Light/Dark</button>
       </nav>
@@ -37,18 +28,18 @@
           <section id="calendar">
               <label>Select a Month</label>
               <select id="monthSelect">
-                  <option value="0">January</option>
-                  <option value="1">February</option>
-                  <option value="2">March</option>
-                  <option value="3">April</option>
-                  <option value="4">May</option>
-                  <option value="5">June</option>
-                  <option value="6">July</option>
-                  <option value="7">August</option>
-                  <option value="8">September</option>
-                  <option value="9">October</option>
-                  <option value="10">November</option>
-                  <option value="11">December</option>
+                  <option value="0">January❄️</option>
+                  <option value="1">February💝</option>
+                  <option value="2">March🍀</option>
+                  <option value="3">April☔</option>
+                  <option value="4">May🌸</option>
+                  <option value="5">June☀️</option>
+                  <option value="6">July🍦</option>
+                  <option value="7">August✏️</option>
+                  <option value="8">September🍎</option>
+                  <option value="9">October🎃</option>
+                  <option value="10">November🍂</option>
+                  <option value="11">December🎄</option>
               </select>
               
               <h2 id="selectMonth">October</h2>
@@ -94,7 +85,7 @@
       </section>
 
       <div id="weatherAPI">
-        <h3>Weather</h3>
+        <!-- <h3>Weather</h3> -->
         <div id="weather"></div>
 
         <script>
