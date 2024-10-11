@@ -84,7 +84,7 @@ main {
     width: 100%;
 }
 
-#selectMonth {
+#selectMonth, #selectYear {
     text-align: center;
 }
 
@@ -121,6 +121,7 @@ label {
     display: block;
     font-size: 18px;
 }
+
 
 #tasks {
     text-align: center;
