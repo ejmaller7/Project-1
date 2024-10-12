@@ -111,7 +111,7 @@ document.getElementById('city-form').addEventListener('submit', function(event) 
 			const tempInF = (data.main.temp * 9 / 5) +32;
             const weatherInfo = `
                 <p>${data.name} Weather</p>
-                <p>Temperature: ${tempInF} °F</p>
+                <p>Temperature: ${tempInF.toFixed(2)} °F</p>
                 <p>Humidity: ${data.main.humidity}%</p>
                 <p>Description: ${data.weather[0].description}</p>
             `;
