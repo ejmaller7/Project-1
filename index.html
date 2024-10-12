@@ -17,7 +17,14 @@
     <header class="header">
       <h1>To Do Calendar</h1>
       <nav>
-        <a href="#" id="weather">Weather  &#9729</a>
+        <!-- <a href="#" id="weather">Weather  </a> -->
+        <p id="weather">Weather &#9729</p>
+        <form id="city-form">
+       <input type="text" id="city-input" placeholder="Enter city name" required>
+       <button type="submit">Get Weather</button>
+       </form>
+
+      <a id="weather-info"></a>
         <button id="addTask">+</button>
         <button id="theme-toggle">Light/Dark</button>
       </nav>
@@ -70,7 +77,7 @@
                 </tbody>
             </table>
 
-          </article>
+
     </section>
   
 
@@ -88,7 +95,7 @@
         <div id="weather"></div>
 
         <script>
-          const data = null;
+          <!-- const data = null;
 
           const xhr = new XMLHttpRequest();
           xhr.withCredentials = true;
@@ -124,7 +131,7 @@
             "weatherapi-com.p.rapidapi.com"
           );
 
-          xhr.send(data);
+          xhr.send(data); -->
         </script>
       </div>
       <section id="notepad">
@@ -137,9 +144,9 @@
           Made by Team Null
         </h1>
 
-        
-      
       </div>   
+
+    </article>
 
     </footer>
 
