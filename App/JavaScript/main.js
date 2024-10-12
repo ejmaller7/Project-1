@@ -10,3 +10,20 @@ toggleButton.addEventListener('click', () => {
     }
 });
 
+const toDoList = document.getElementById("listStyle");
+const addTaskNav = document.getElementById("addTask");
+const addTaskToDo = document.getElementById("toDoTask");
+
+addTaskNav.addEventListener("click", () => {
+    const task = prompt("Add new task: ").trim();
+    const taskElement = document.createElement("p");
+    taskElement.textContent = task;
+    toDoList.appendChild(taskElement);
+})
+
+addTaskToDo.addEventListener("click", () => {
+    const task = prompt("Add new task: ").trim();
+    const taskElement = document.createElement("p");
+    taskElement.textContent = task;
+    toDoList.appendChild(taskElement);
+})

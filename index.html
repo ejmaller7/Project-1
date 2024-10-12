@@ -25,8 +25,8 @@
 
     <main>
       <section class="section">
-        <section id="calendar">
-            <label>Select a Month</label>
+        <article id="calendar">
+            <label style="font-weight: bold;">Select a Month</label>
             <select id="monthSelect">
                 <option value="0">January</option>
                 <option value="1">February</option>
@@ -42,7 +42,7 @@
                 <option value="11">December</option>
             </select>
   
-            <label>Select a Year</label>
+            <label style="font-weight: bold;">Select a Year</label>
             <select id="yearSelect">
                 <option value="2023">2023</option>
                 <option value="2024">2024</option>
@@ -51,7 +51,7 @@
                 <option value="2027">2027</option>
             </select>
   
-            <h2 id="selectMonthYear">October 2023</h2>
+            <h2 id="selectMonthYear"></h2>
   
             <table id="calendarTable">
                 <thead>
@@ -69,31 +69,19 @@
                     
                 </tbody>
             </table>
-        </section>
+          </article>
     </section>
   
 
-        <aside id="tasks">
+        <aside id="tasks" style="display: none;">
           <section class="toDoList">
-            <h2>Daily To Do List</h2>
-            <div
-              style="height: fit-content; width: 150%; border: 2px solid black"
-            >
-              <p>This</p>
-              <p>is</p>
-              <p>a</p>
-              <p>bunch</p>
-              <p>of</p>
-              <p>random</p>
-              <p>paragraphs</p>
-              <p>to</p>
-              <p>test</p>
-              <p>box</p>
+            <div id="listStyle">
+              <h3>Daily To Do List</h3>
+              <button id="toDoTask">Add New Task</button>
             </div>
           </section>
-        </aside>
+        </aside> 
       </section>
-
       <div id="weatherAPI">
         <!-- <h3>Weather</h3> -->
         <div id="weather"></div>
@@ -138,6 +126,7 @@
           xhr.send(data);
         </script>
       </div>
+      <section id="notepad">
     </main>
 
     <footer>
