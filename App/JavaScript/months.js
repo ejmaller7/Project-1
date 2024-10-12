@@ -134,3 +134,17 @@ document.addEventListener('DOMContentLoaded', function () {
         displayMonth(parseInt(monthSelect.value), parseInt(yearSelect.value));
     });
 });
+
+
+//Function to add a task
+// const button = document.querySelector(`button`);
+// const taskList = document.getElementById(`tasksAdded`)
+// button.addEventListener(`click`, () => {
+//     const task = prompt(`Add task to list`);
+//     if (task) {
+//         const listItem = document.createElement(`li`);
+//         listItem.textContent = task;
+//         taskList.appendChild(listItem);
+//     }
+
+// });
