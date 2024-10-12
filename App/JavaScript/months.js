@@ -98,3 +98,26 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 })
 
+document.getElementById('city-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const city = document.getElementById('city-input').value;
+    const apiKey = 'a72fd5b57b39a74eb1bd5d872c138b8f'; // Replace with your actual API key
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+
+			const tempInF = (data.main.temp * 9 / 5) +32;
+            const weatherInfo = `
+                <p>${data.name} Weather</p>
+                <p>Temperature: ${tempInF} °F</p>
+                <p>Humidity: ${data.main.humidity}%</p>
+                <p>Description: ${data.weather[0].description}</p>
+            `;
+            document.getElementById('weather-info').innerHTML = weatherInfo;
+        })
+        .catch(error => {
+            console.error('Error fetching weather data:', error);
+        });
+});
