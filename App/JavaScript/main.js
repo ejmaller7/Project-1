@@ -17,13 +17,42 @@ const addTaskToDo = document.getElementById("toDoTask");
 addTaskNav.addEventListener("click", () => {
     const task = prompt("Add new task: ").trim();
     const taskElement = document.createElement("p");
+    const checkbox = document.createElement("input");
+
+    checkbox.type = 'checkbox';
+
+    checkbox.addEventListener('change', function() {
+        if (checkbox.checked) {
+            taskElement.style.textDecoration = 'line-through';
+        } else {
+            taskElement.style.textDecoration = 'none';
+        }
+    });
+
     taskElement.textContent = task;
+
+    taskElement.prepend(checkbox);
     toDoList.appendChild(taskElement);
 })
 
 addTaskToDo.addEventListener("click", () => {
     const task = prompt("Add new task: ").trim();
     const taskElement = document.createElement("p");
+    const checkbox = document.createElement("input");
+
+    checkbox.type = 'checkbox';
+
+    checkbox.addEventListener('change', function() {
+        if (checkbox.checked) {
+            taskElement.style.textDecoration = 'line-through';
+        } else {
+            taskElement.style.textDecoration = 'none';
+        }
+    });
+
     taskElement.textContent = task;
+
+    taskElement.prepend(checkbox);
     toDoList.appendChild(taskElement);
+    
 })

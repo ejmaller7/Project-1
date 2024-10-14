@@ -248,6 +248,8 @@ h3 {
 }
 
 #listStyle p {
+    display: flex;
+    align-items: center;
     padding-top: 5px;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -256,6 +258,10 @@ h3 {
     text-align: left;
     font-size: 110%;
     word-wrap: break-word;
+}
+
+#listStyle p input[type="checkbox"] {
+    margin-right: 10px;
 }
 
 body.light-mode #listStyle p::before {
