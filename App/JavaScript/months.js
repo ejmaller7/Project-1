@@ -1,9 +1,29 @@
+const monthImages = [
+    './App/Images/january.webp',
+    './App/Images/february.jpg',
+    './App/Images/march.jpg',
+    './App/Images/april.jpg',
+    './App/Images/may.jpg',
+    './App/Images/june.jpg',
+    './App/Images/july.jpg',
+    './App/Images/august.jpg',
+    './App/Images/september.jpg',
+    './App/Images/october.avif',
+    './App/Images/november.jpg',
+    './App/Images/december.png'
+]
+
+// const currentlySelectedMonth = new Date().getMonth();
+// document.main.style.backgroundImage = `url(${monthImages[monthSelect]})`;
+
 document.addEventListener('DOMContentLoaded', function () { 
     const monthSelect = document.getElementById('monthSelect');
     const yearSelect = document.getElementById('yearSelect');
     const selectMonthYear = document.getElementById('selectMonthYear');
     const calendarBody = document.getElementById('calendarBody');
-    const aside = document.getElementsByTagName("aside")[0];
+    const aside = document.getElementById('tasks');
+    const toDoList = document.getElementById("listStyle");
+    const addTaskToDo = document.getElementById("toDoTask");
 
     let currentlySelectedDate = null;
 
@@ -21,15 +41,84 @@ document.addEventListener('DOMContentLoaded', function () {
         
         if (currentlySelectedDate) {
             currentlySelectedDate.classList.remove("tdSelected");
+            currentlySelectedDate.setAttribute("style", "background-color: #f5f4f4")
         }
 
         
         if (!td.classList.contains("tdSelected")) {
             td.classList.add("tdSelected");
             currentlySelectedDate = td;
+            td.setAttribute("style", "background-color: #FFFF00;");
         }
+
+        const selectedDate = `${selectMonthYear.textContent}-${td.textContent}`;
+        loadTasksFromLocalStorage(selectedDate);
     };
 
+    function saveTasksToLocalStorage(date, tasks) {
+        localStorage.setItem(date, JSON.stringify(tasks));
+    }
+
+    // Function to load tasks from localStorage for specific date
+    function loadTasksFromLocalStorage(date) {
+        const savedTasks = localStorage.getItem(date);
+        const tasks = savedTasks ? JSON.parse(savedTasks) : [];
+        renderTasks(tasks);
+    }
+
+    function renderTasks(tasks) {
+       const taskContainer = document.querySelector("#listStyle p");
+       if (taskContainer) taskContainer.remove();
+       const newTaskContainer = document.createElement("p");
+
+       tasks.forEach(task => {
+        const taskElement = document.createElement("div");
+        const checkbox = document.createElement("input");
+        checkbox.type = 'checkbox';
+        checkbox.checked = task.completed;
+
+        if (task.completed) {
+            taskElement.style.textDecoration = 'line-through';
+        }
+       
+
+        checkbox.addEventListener('change', function () {
+            task.completed = checkbox.checked;
+            if (checkbox.checked) {
+              taskElement.style.textDecoration = 'line-through';
+            } else {
+              taskElement.style.textDecoration = 'none';
+            }
+            const selectedDate = `${selectMonthYear.textContent}-${currentlySelectedDate.textContent}`;
+            saveTasksToLocalStorage(selectedDate, tasks); // Update tasks in localStorage
+          });
+
+          taskElement.textContent = task.text;
+          taskElement.prepend(checkbox);
+          newTaskContainer.appendChild(taskElement);
+        });
+        toDoList.appendChild(newTaskContainer);
+    }
+
+    function addTask() {
+        const taskText = document.getElementById("task-p");
+        if (taskText === '') return;
+
+        const selectedDate = `${selectMonthYear.textContent}-${currentlySelectedDate.textContent}`
+        const tasks = loadTasksFromLocalStorage(selectedDate);
+        const newTask = { text: taskText, completed: false };
+        // const tasks = loadTasksFromLocalStorage(newTask);
+
+        // tasks.push(newTask);
+
+        saveTasksToLocalStorage(selectedDate, newTask);
+        renderTasks(newTask);
+    }
+
+    //function that pulls class="tdSelected" and appends p-tag from prompt
+
+    addTaskToDo.addEventListener("click", addTask);
+    
     const tdListener = function () {
         const tdElements = calendarBody.getElementsByTagName('td');
         for (let i = 0; i < tdElements.length; i++) {

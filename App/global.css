@@ -30,27 +30,6 @@ body {
     padding-right: 20px;
 }
 
-#addTask {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50px;
-    width: 50px;
-    border: 1px;
-    background-color: #c9e0fa;  
-    box-shadow: 2px 2px 3px black; 
-    color: #0e3967;
-    font-size: 40px;
-    font-weight: 900;
-    -webkit-text-stroke: 2px #0e3967;
-    border-radius: 20%;
-    cursor: pointer;
-}
-
-#addTask:hover {
-    box-shadow: 4px 4px 5px black;
-}
-
 #city-form button:hover {
     box-shadow: 2px 2px 3px black;
 }
@@ -265,14 +244,14 @@ h3 {
 }
 
 body.light-mode #listStyle p::before {
-    content: "•";
+    /* content: "•"; */
     margin-right: 10px;
     margin-left: 20px;
     color:black
 }
 
 body.dark-mode #listStyle p::before {
-    content: "•";
+    /* content: "•"; */
     margin-right: 10px;
     margin-left: 20px;
     color:rgb(255, 255, 255)
@@ -321,8 +300,14 @@ body.dark-mode h3 {
 }
 
 footer {
-    height: 80px;
+    height: 130px;
     width: 100%;
     background-color: #0e3967;
     margin-top: 2%;
+}
+
+footer div h3 {
+    display: flex;
+    justify-content: space-evenly;
+    background-color:#0e3967;  
 }
