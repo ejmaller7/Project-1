@@ -11,32 +11,22 @@ Our team work togeher to develop the front end project website consist of a cale
 
 ## Installation
 
-What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
-    We included the bootrap css 
-    we also use the Visual studio live sharing for everyone to work on.
-
+    Install the bootstrap CSS  and create a new repository. Then, we create new folder and files structures on our local computer. Our teammate upload the files to the Git Hub repository. Then every team member download the starter files. We also use the Visual studio live sharing for everyone to work on during meeting. When not in meeting, all of us do the research and develop ideas for the project. 
 
 ## Usage
 
-Provide instructions and examples for use. Include screenshots as needed.
+Example snapshots are presented as below: 
 
-
-    ```md
-    ![alt text](assets/images/screenshot.png)
-    ```
 
 ## Credits
-Ethan Maller 
-Brian Solano
-Christopher Fortier
-Justin Miller
-Hon chau
+Ethan Maller  https://github.com/ejmaller7
+Brian Solano https://github.com/brolano
+Christopher Fortier  https://github.com/ChrisFort03
+Justin Miller  https://github.com/JPMill
+Hon chau  https://github.com/kevinchau7
 
-List your collaborators, if any, with links to their GitHub profiles.
-
-If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
-
-If you followed tutorials, include links to those here as well.
+Third-party tool:
+Bootstrap CSS
 
 ## License
 
@@ -49,7 +39,7 @@ MIT License
 If your project has a lot of features, list them here.
 1. calendar 
 2. To-do list function will let user to input task for each day. When the tasks are completed, the calenday day will change color to reflect the action. 
-3. Weather hyperlink will direct you to the weather website. 
+3. Weather station - input any US city and will output the corresponding city. 
 
 
 ## Tests
