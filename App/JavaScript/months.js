@@ -24,28 +24,30 @@ document.addEventListener('DOMContentLoaded', function () {
 
     let currentlySelectedDate = null;
 
-    const toggleAside = (id) => {
-        if (aside.style.display === "none" || aside.style.display === "") {
-            aside.style.display = "block";
-        } else {
-            aside.style.display = "none";
-        }
+    // const toggleAside = (id) => {
+    //     if (aside.style.display === "none" || aside.style.display === "") {
+    //         aside.style.display = "block";
+    //     } else {
+    //         aside.style.display = "none";
+    //     }
         //logic (pass in id)
 
-    };
+    // };
 
     const toggleTd = function (event) {
         const td = event.target;
 
-        if (currentlySelectedDate) {
-            currentlySelectedDate.classList.remove("tdSelected");
-            currentlySelectedDate.setAttribute("style", "background-color: #f5f4f4");
-        }
-
         if (!td.classList.contains("tdSelected")) {
+            if (currentlySelectedDate) {
+                currentlySelectedDate.classList.remove("tdSelected");
+                currentlySelectedDate.setAttribute("style", "background-color: #f5f4f4");
+            }
             td.classList.add("tdSelected");
             currentlySelectedDate = td;
             td.setAttribute("style", "background-color: #FFFF00;");
+        } else {
+            td.classList.remove("tdSelected");
+            td.setAttribute("style", "background-color: #f5f4f4");
         }
 
         const selectedDate = `${selectMonthYear.textContent}-${td.textContent}`;
@@ -141,14 +143,14 @@ document.addEventListener('DOMContentLoaded', function () {
         const taskText = document.getElementById("task-p").value;
         if (taskText === '') return;
 
-        const selectedDate = `${selectMonthYear.textContent}-${currentlySelectedDate.textContent}`;
-        const tasks = loadTasksFromLocalStorage(selectedDate); 
-        const newTask = { text: taskText, completed: false };
+        // const selectedDate = `${selectMonthYear.textContent}-${currentlySelectedDate.textContent}`;
+        // const tasks = loadTasksFromLocalStorage(selectedDate); 
+        // const newTask = { text: taskText, completed: false };
 
-        tasks.push(newTask); 
+        // tasks.push(newTask); 
 
-        saveTasksToLocalStorage(selectedDate, tasks); 
-        renderTasks(tasks); 
+        // saveTasksToLocalStorage(selectedDate, tasks); 
+        // renderTasks(tasks); 
     }
 
     addTaskToDo.addEventListener("click", addTask);
