@@ -225,11 +225,39 @@ document.addEventListener('DOMContentLoaded', function () {
 
     monthSelect.addEventListener('change', function () {
         displayMonth(parseInt(monthSelect.value), parseInt(yearSelect.value));
+
+        var img = document.getElementById("BackgroundImg");
+        if (monthSelect.value == 0) {
+            img.style.backgroundImage = `url('${monthImages[0]}')`;
+         } else if(monthSelect.value == 1) {
+            img.style.backgroundImage = `url('${monthImages[1]}')`; 
+         } else if(monthSelect.value == 2) {
+            img.style.backgroundImage = `url('${monthImages[2]}')`; 
+         } else if(monthSelect.value == 3) {
+            img.style.backgroundImage = `url('${monthImages[3]}')`; 
+         } else if(monthSelect.value == 4) {
+            img.style.backgroundImage = `url('${monthImages[4]}')`; 
+         } else if(monthSelect.value == 5) {
+            img.style.backgroundImage = `url('${monthImages[5]}')`; 
+         } else if(monthSelect.value == 6) {
+            img.style.backgroundImage = `url('${monthImages[6]}')`; 
+         } else if(monthSelect.value == 7) {
+            img.style.backgroundImage = `url('${monthImages[7]}')`; 
+         } else if(monthSelect.value == 8) {
+            img.style.backgroundImage = `url('${monthImages[8]}')`; 
+         } else if(monthSelect.value == 9) {
+            img.style.backgroundImage = `url('${monthImages[9]}')`; 
+         } else if(monthSelect.value == 10) {
+            img.style.backgroundImage = `url('${monthImages[10]}')`; 
+         } else if(monthSelect.value == 11) {
+            img.style.backgroundImage = `url('${monthImages[11]}')`; 
+         }
     });
 
     yearSelect.addEventListener('change', function () {
         displayMonth(parseInt(monthSelect.value), parseInt(yearSelect.value));
     });
+    
 });
 
 document.getElementById('city-form').addEventListener('submit', function(event) {
