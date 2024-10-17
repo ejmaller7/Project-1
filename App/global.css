@@ -111,6 +111,13 @@ main {
     display: inline-block;
     margin-left: 90px;
     width: 100%;
+    justify-content: center;
+}
+
+#calendar label {
+    width: 150px;
+    margin: auto;
+    border: 1px solid black;
 }
 
 /* maybe? */
@@ -138,6 +145,11 @@ main {
 
 /* added */
 #selectMonthYear {
+    width: 550px;
+    margin: auto;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+    border-top: 2px solid black;
     font-size: 400%;
 }
 
@@ -289,6 +301,22 @@ body.light-mode thead {
 
 body.dark-mode thead {
     background-color: #6885a7;   
+}
+
+body.light-mode #calendar label {
+    background-color: #f5f4f4;
+}
+
+body.dark-mode #calendar label {
+    background-color: #6b6b6b;
+}
+
+body.light-mode #selectMonthYear {
+    background-color: #f5f4f4;
+}
+
+body.dark-mode #selectMonthYear {
+    background-color: #6b6b6b;
 }
 
 body.light-mode #listStyle {
