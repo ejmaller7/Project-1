@@ -23,54 +23,23 @@ document.addEventListener('DOMContentLoaded', function () {
     const addTaskToDo = document.getElementById("toDoTask");
 
     let currentlySelectedDate = null;
-
-    // const toggleAside = (id) => {
-    //     if (aside.style.display === "none" || aside.style.display === "") {
-    //         aside.style.display = "block";
-    //     } else {
-    //         aside.style.display = "none";
-    //     }
-        //logic (pass in id)
-
-    // };
-
-    const toggleTd = function (event) {
-        const td = event.target;
-
-        if (!td.classList.contains("tdSelected")) {
-            if (currentlySelectedDate) {
-                currentlySelectedDate.classList.remove("tdSelected");
-                currentlySelectedDate.setAttribute("style", "background-color: #f5f4f4");
-            }
-            td.classList.add("tdSelected");
-            currentlySelectedDate = td;
-            td.setAttribute("style", "background-color: #FFFF00;");
-        } else {
-            td.classList.remove("tdSelected");
-            td.setAttribute("style", "background-color: #f5f4f4");
-        }
-
-        const selectedDate = `${selectMonthYear.textContent}-${td.textContent}`;
-        loadTasksFromLocalStorage(selectedDate);
-    };
+    let tasksByDate = JSON.parse(localStorage.getItem("tasksByDate")) || {};
 
     function saveTasksToLocalStorage(date, tasks) {
-        localStorage.setItem(date, JSON.stringify(tasks));
+        tasksByDate[date] = tasks;
+        localStorage.setItem("tasksByDate", JSON.stringify(tasksByDate));
     }
 
     function loadTasksFromLocalStorage(date) {
-        const savedTasks = localStorage.getItem(date);
-        const tasks = savedTasks ? JSON.parse(savedTasks) : [];
-        renderTasks(tasks);
+        return tasksByDate[date] || [];
     }
 
     function renderTasks(tasks) {
-        const taskContainer = document.querySelector("#listStyle p");
-        if (taskContainer) taskContainer.remove();
-        const newTaskContainer = document.createElement("p");
+        const taskElements = toDoList.querySelectorAll('p');
+        taskElements.forEach(task => task.remove());
 
         tasks.forEach(task => {
-            const taskElement = document.createElement("div");
+            const taskElement = document.createElement("p");
             const checkbox = document.createElement("input");
             checkbox.type = 'checkbox';
             checkbox.checked = task.completed;
@@ -82,102 +51,88 @@ document.addEventListener('DOMContentLoaded', function () {
             checkbox.addEventListener('change', function () {
                 task.completed = checkbox.checked;
                 taskElement.style.textDecoration = checkbox.checked ? 'line-through' : 'none';
-                const selectedDate = `${selectMonthYear.textContent}-${currentlySelectedDate.textContent}`;
-                saveTasksToLocalStorage(selectedDate, tasks); // Update tasks in localStorage
+                saveTasksToLocalStorage(currentlySelectedDate, tasks);
             });
 
-            taskElement.textContent = `${task.text} (Added: ${new Date(task.timestamp).toLocaleString()})`;
+            taskElement.textContent = `${task.text}`;
             taskElement.prepend(checkbox);
-            newTaskContainer.appendChild(taskElement);
+            toDoList.appendChild(taskElement);
         });
-        toDoList.appendChild(newTaskContainer);
     }
 
-    // function loadTasksFromLocalStorage(date) {
-    //     const savedTasks = localStorage.getItem(date);
-    //     const tasks = savedTasks ? JSON.parse(savedTasks) : [];
+    const toggleTd = function (event) {
+        const td = event.target;
 
-    //     if (!Array.isArray(tasks)) {
-    //         console.error("Expected tasks to be an array but got:", tasks);
-    //         return [];
-    //     }
+        if (!td.classList.contains("tdSelected")) {
+            const previousSelected = document.querySelector(".tdSelected");
+            if (previousSelected) {
+                previousSelected.classList.remove("tdSelected");
+                previousSelected.style.backgroundColor = "#f5f4f4";
+            }
+            
+            td.classList.add("tdSelected");
+            td.style.backgroundColor = "#FFFF00";
+        }
 
-    //     renderTasks(tasks);
-    //     return tasks;
-    // }
+        const selectedDate = `${selectMonthYear.textContent}-${td.textContent.trim()}`;
+        currentlySelectedDate = selectedDate;
 
-    // function renderTasks(tasks) {
-    //     const taskContainer = document.querySelector("#listStyle p");
-    //     if (taskContainer) taskContainer.remove();
-    //     const newTaskContainer = document.createElement("p");
+        const tasks = loadTasksFromLocalStorage(selectedDate);
+        renderTasks(tasks);
 
-    //     tasks.forEach(task => {
-    //         const taskElement = document.createElement("div");
-    //         const checkbox = document.createElement("input");
-    //         checkbox.type = 'checkbox';
-    //         checkbox.checked = task.completed;
-
-    //         if (task.completed) {
-    //             taskElement.style.textDecoration = 'line-through';
-    //         }
-
-    //         checkbox.addEventListener('change', function () {
-    //             task.completed = checkbox.checked;
-    //             if (checkbox.checked) {
-    //                 taskElement.style.textDecoration = 'line-through';
-    //             } else {
-    //                 taskElement.style.textDecoration = 'none';
-    //             }
-    //             const selectedDate = `${selectMonthYear.textContent}-${currentlySelectedDate.textContent}`;
-    //             saveTasksToLocalStorage(selectedDate, tasks); 
-    //         });
-
-    //         taskElement.textContent = task.text;
-    //         taskElement.prepend(checkbox);
-    //         newTaskContainer.appendChild(taskElement);
-    //     });
-    //     toDoList.appendChild(newTaskContainer);
-    // }
+        aside.style.display = "block";
+    };
 
     function addTask() {
-        const taskText = document.getElementById("task-p").value;
+        const taskText = prompt("Add new task: ").trim();
         if (taskText === '') return;
 
-        // const selectedDate = `${selectMonthYear.textContent}-${currentlySelectedDate.textContent}`;
-        // const tasks = loadTasksFromLocalStorage(selectedDate); 
-        // const newTask = { text: taskText, completed: false };
+        if (!currentlySelectedDate) {
+            alert("Please select a date first!");
+            return;
+        }
 
-        // tasks.push(newTask); 
+        const tasks = loadTasksFromLocalStorage(currentlySelectedDate);
+        const newTask = { text: taskText, completed: false };
+        tasks.push(newTask);
 
-        // saveTasksToLocalStorage(selectedDate, tasks); 
-        // renderTasks(tasks); 
+        saveTasksToLocalStorage(currentlySelectedDate, tasks);
+        renderTasks(tasks);
     }
 
+    addTaskToDo.removeEventListener('click', addTask);
     addTaskToDo.addEventListener("click", addTask);
 
     const tdListener = function () {
         const tdElements = calendarBody.getElementsByTagName('td');
         for (let i = 0; i < tdElements.length; i++) {
-            tdElements[i].addEventListener("click", function (event) {
-                tdElements[i].id = `td${[i]}-${monthSelect.value}-${yearSelect.value}`;
-                const toggleAside = (id) => {
-                    const asideElement = document.getElementById(id)
-                    if (asideElement) {
-                        if (aside.style.display === "none" || aside.style.display === "") {
-                            aside.style.display = "block";
-                        } else {
-                            aside.style.display = "none";
-                        }
-                    }
-                // toggle p-tag
-                // variable = document.getElementById("task-p").value
-                // if(asideElement) {}
-                };               
-                toggleAside(`td${[i]}-${monthSelect.value}-${yearSelect.value}`);
-                toggleTd(event);
-            });
+            tdElements[i].addEventListener("click", toggleTd);
         }
     };
+
+    function displayMonth(monthIndex, year) {
+        const daysInMonth = new Date(year, monthIndex + 1, 0).getDate();
+        const firstDay = new Date(year, monthIndex, 1).getDay();
+
+        selectMonthYear.innerHTML = `${monthSelect.options[monthIndex].text} ${year}`;
+
+        let tableHTML = '<tr>';
+        for (let i = 0; i < firstDay; i++) {
+            tableHTML += `<td></td>`;
+        }
+
+        for (let day = 1; day <= daysInMonth; day++) {
+            tableHTML += `<td>${day}</td>`;
+            if ((firstDay + day) % 7 === 0) {
+                tableHTML += '</tr><tr>';
+            }
+        }
+
+        tableHTML += '</tr>';
+        calendarBody.innerHTML = tableHTML;
+
+        tdListener();
+    }
 
     if (!monthSelect || !yearSelect || !selectMonthYear || !calendarBody) {
         console.error('One or more calendar elements are missing in the DOM.');
