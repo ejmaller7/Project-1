@@ -10,19 +10,22 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <link rel="stylesheet" href="./App/global.css" />
   </head>
 
-  <body class="light-mode">
-      <header class="header">
-        <h1>To Do Calendar</h1>
-        <nav>
-          <!-- <a href="#" id="weather">Weather  </a> -->
-          <p id="weather">Weather &#9729</p>
-          <form id="city-form">
-            <input type="text" id="city-input" placeholder="Enter city name" required>
-            <button type="submit">Get Weather</button>
-          </form>
+  <body class="light-mode" id="BackgroundImg">
+    <header class="header">
+      <h1>To Do Calendar</h1>
+      <nav>
+        <!-- <a href="#" id="weather">Weather  </a> -->
+        <p id="weather">Weather &#9729</p>
+        <form id="city-form">
+          <input type="text" id="city-input" placeholder="Enter city name" required>
+          <button type="submit">Get Weather</button>
+        </form>
 
           <a id="weather-info"></a>
           <button id="theme-toggle">Light/Dark</button>
