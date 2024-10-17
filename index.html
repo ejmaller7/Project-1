@@ -17,7 +17,6 @@
       <header class="header">
         <h1>To Do Calendar</h1>
         <nav>
-          <!-- <a href="#" id="weather">Weather  </a> -->
           <p id="weather">Weather &#9729</p>
           <form id="city-form">
             <input type="text" id="city-input" placeholder="Enter city name" required>
@@ -70,13 +69,10 @@
                           <th>Saturday</th>
                       </tr>
                   </thead>
-                  <tbody id="calendarBody">
-                      
-                  </tbody>
+                  <tbody id="calendarBody"></tbody>
               </table>
-
-
-      </section>
+          </article>
+        </section>
     
 
           <aside id="tasks" style="display: none;">
@@ -89,48 +85,7 @@
           </aside> 
         </section>
         <div id="weatherAPI">
-          <!-- <h3>Weather</h3> -->
           <div id="weather"></div>
-
-          <!-- <script>
-            const data = null;
-
-            const xhr = new XMLHttpRequest();
-            xhr.withCredentials = true;
-
-            xhr.addEventListener("readystatechange", function () {
-              if (this.readyState === this.DONE) {
-                if (this.status === 200) {
-                  const response = JSON.parse(this.responseText);
-                  console.log(response);
-                  document.getElementById(
-                    "weather"
-                  ).innerText = `Temperature: ${response.current.temp_c}°C`;
-                } else {
-                  console.error(
-                    "Error fetching data:",
-                    this.status,
-                    this.statusText
-                  );
-                }
-              }
-            });
-
-            xhr.open(
-              "GET",
-              "https://weatherapi-com.p.rapidapi.com/current.json?q=53.1%2C-0.13"
-            );
-            xhr.setRequestHeader(
-              "x-rapidapi-key",
-              "a5f3ace039msh7ec6cd8fcbd6b09p18ee83jsn7c423b6fb03d"
-            );
-            xhr.setRequestHeader(
-              "x-rapidapi-host",
-              "weatherapi-com.p.rapidapi.com"
-            );
-
-            xhr.send(data); 
-          </script> -->
         </div>
         <section id="notepad">
       </main>
@@ -150,10 +105,7 @@
             <a href="https://github.com/ejmaller7" target="_blank" style="color: #c9e0fa">Ethan</a>
             <a href="https://github.com/kevinchau7" target="_blank" style="color: #c9e0fa">Kevin</a>
           </h3>
-        </div>   
-
-      </article>
-
+        </div>
       </footer>
 
       <script
