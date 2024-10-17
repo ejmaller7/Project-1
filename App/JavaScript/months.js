@@ -263,6 +263,7 @@ document.getElementById('city-form').addEventListener('submit', function(event) 
             document.getElementById('weather-info').innerHTML = weatherInfo;
         })
         .catch(error => {
+            alert('Invalid City');
             console.error('Error fetching weather data:', error);
         });
 });
