@@ -9,7 +9,7 @@ body {
     justify-content: space-between;
     height: 125px;
     width: 100%;
-    margin-bottom: 2%;
+    margin-bottom: 0;
     background-color: #0e3967;
     color: #fff;
 }
@@ -339,7 +339,7 @@ footer {
     height: 130px;
     width: 100%;
     background-color: #0e3967;
-    margin-top: 2%;
+    margin-top: 0;
 }
 
 footer div h3 {

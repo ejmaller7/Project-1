@@ -13,155 +13,155 @@
     <link rel="stylesheet" href="./App/global.css" />
   </head>
 
-  <body class="light-mode" id="BackgroundImg">
-    <header class="header">
-      <h1>To Do Calendar</h1>
-      <nav>
-        <!-- <a href="#" id="weather">Weather  </a> -->
-        <p id="weather">Weather &#9729</p>
-        <form id="city-form">
-          <input type="text" id="city-input" placeholder="Enter city name" required>
-          <button type="submit">Get Weather</button>
-        </form>
+  <body class="light-mode">
+      <header class="header">
+        <h1>To Do Calendar</h1>
+        <nav>
+          <!-- <a href="#" id="weather">Weather  </a> -->
+          <p id="weather">Weather &#9729</p>
+          <form id="city-form">
+            <input type="text" id="city-input" placeholder="Enter city name" required>
+            <button type="submit">Get Weather</button>
+          </form>
 
-        <a id="weather-info"></a>
-        <button id="theme-toggle">Light/Dark</button>
-      </nav>
-    </header>
+          <a id="weather-info"></a>
+          <button id="theme-toggle">Light/Dark</button>
+        </nav>
+      </header>
 
-    <main id="BackgroundImg">
-      <section class="section">
-        <article id="calendar">
-            <label style="font-weight: bold;">Select a Month</label>
-            <select id="monthSelect">
-                <option value="0" id="january">❄️January</option>
-                <option value="1" id="february">💝February</option>
-                <option value="2" id="march">🍀March</option>
-                <option value="3" id="april">☔April</option>
-                <option value="4" id="may">🌻May</option>
-                <option value="5" id="june">🌞June</option>
-                <option value="6"id="july">🎆July</option>
-                <option value="7" id="august">✏️August</option>
-                <option value="8" id="september">🍂September</option>
-                <option value="9" id="october">🎃October</option>
-                <option value="10" id="november">🦃November</option>
-                <option value="11" id="december">🎄December</option>
-            </select>
-  
-            <label style="font-weight: bold;">Select a Year</label>
-            <select id="yearSelect">
-                <option value="2024">2024</option>
-                <option value="2025">2025</option>
-                <option value="2026">2026</option>
-                <option value="2027">2027</option>
-            </select>
-  
-            <h2 id="selectMonthYear"></h2>
-  
-            <table id="calendarTable">
-                <thead>
-                    <tr>
-                        <th>Sunday</th>
-                        <th>Monday</th>
-                        <th>Tuesday</th>
-                        <th>Wednesday</th>
-                        <th>Thursday</th>
-                        <th>Friday</th>
-                        <th>Saturday</th>
-                    </tr>
-                </thead>
-                <tbody id="calendarBody">
-                    
-                </tbody>
-            </table>
+      <main id="BackgroundImg">
+        <section class="section">
+          <article id="calendar">
+              <label style="font-weight: bold;">Select a Month</label>
+              <select id="monthSelect">
+                  <option value="0" id="january">❄️January</option>
+                  <option value="1" id="february">💝February</option>
+                  <option value="2" id="march">🍀March</option>
+                  <option value="3" id="april">☔April</option>
+                  <option value="4" id="may">🌻May</option>
+                  <option value="5" id="june">🌞June</option>
+                  <option value="6"id="july">🎆July</option>
+                  <option value="7" id="august">✏️August</option>
+                  <option value="8" id="september">🍂September</option>
+                  <option value="9" id="october">🎃October</option>
+                  <option value="10" id="november">🦃November</option>
+                  <option value="11" id="december">🎄December</option>
+              </select>
+    
+              <label style="font-weight: bold;">Select a Year</label>
+              <select id="yearSelect">
+                  <option value="2024">2024</option>
+                  <option value="2025">2025</option>
+                  <option value="2026">2026</option>
+                  <option value="2027">2027</option>
+              </select>
+    
+              <h2 id="selectMonthYear"></h2>
+    
+              <table id="calendarTable">
+                  <thead>
+                      <tr>
+                          <th>Sunday</th>
+                          <th>Monday</th>
+                          <th>Tuesday</th>
+                          <th>Wednesday</th>
+                          <th>Thursday</th>
+                          <th>Friday</th>
+                          <th>Saturday</th>
+                      </tr>
+                  </thead>
+                  <tbody id="calendarBody">
+                      
+                  </tbody>
+              </table>
 
 
-    </section>
-  
-
-        <aside id="tasks" style="display: none;">
-          <section class="toDoList">
-            <div id="listStyle">
-              <h3>Daily To Do List</h3>
-              <button id="toDoTask">Add New Task</button>
-            </div>
-          </section>
-        </aside> 
       </section>
-      <div id="weatherAPI">
-        <!-- <h3>Weather</h3> -->
-        <div id="weather"></div>
+    
 
-        <!-- <script>
-          const data = null;
+          <aside id="tasks" style="display: none;">
+            <section class="toDoList">
+              <div id="listStyle">
+                <h3>Daily To Do List</h3>
+                <button id="toDoTask">Add New Task</button>
+              </div>
+            </section>
+          </aside> 
+        </section>
+        <div id="weatherAPI">
+          <!-- <h3>Weather</h3> -->
+          <div id="weather"></div>
 
-          const xhr = new XMLHttpRequest();
-          xhr.withCredentials = true;
+          <!-- <script>
+            const data = null;
 
-          xhr.addEventListener("readystatechange", function () {
-            if (this.readyState === this.DONE) {
-              if (this.status === 200) {
-                const response = JSON.parse(this.responseText);
-                console.log(response);
-                document.getElementById(
-                  "weather"
-                ).innerText = `Temperature: ${response.current.temp_c}°C`;
-              } else {
-                console.error(
-                  "Error fetching data:",
-                  this.status,
-                  this.statusText
-                );
+            const xhr = new XMLHttpRequest();
+            xhr.withCredentials = true;
+
+            xhr.addEventListener("readystatechange", function () {
+              if (this.readyState === this.DONE) {
+                if (this.status === 200) {
+                  const response = JSON.parse(this.responseText);
+                  console.log(response);
+                  document.getElementById(
+                    "weather"
+                  ).innerText = `Temperature: ${response.current.temp_c}°C`;
+                } else {
+                  console.error(
+                    "Error fetching data:",
+                    this.status,
+                    this.statusText
+                  );
+                }
               }
-            }
-          });
+            });
 
-          xhr.open(
-            "GET",
-            "https://weatherapi-com.p.rapidapi.com/current.json?q=53.1%2C-0.13"
-          );
-          xhr.setRequestHeader(
-            "x-rapidapi-key",
-            "a5f3ace039msh7ec6cd8fcbd6b09p18ee83jsn7c423b6fb03d"
-          );
-          xhr.setRequestHeader(
-            "x-rapidapi-host",
-            "weatherapi-com.p.rapidapi.com"
-          );
+            xhr.open(
+              "GET",
+              "https://weatherapi-com.p.rapidapi.com/current.json?q=53.1%2C-0.13"
+            );
+            xhr.setRequestHeader(
+              "x-rapidapi-key",
+              "a5f3ace039msh7ec6cd8fcbd6b09p18ee83jsn7c423b6fb03d"
+            );
+            xhr.setRequestHeader(
+              "x-rapidapi-host",
+              "weatherapi-com.p.rapidapi.com"
+            );
 
-          xhr.send(data); 
-        </script> -->
-      </div>
-      <section id="notepad">
-    </main>
+            xhr.send(data); 
+          </script> -->
+        </div>
+        <section id="notepad">
+      </main>
 
-    <footer style="height: 140px">
-      <div>
-        <h1 style="color: #fff; text-align: center; font-weight: bold">
-          Made by Team Null
-        </h1>
-        <h2 style="color: #fff; text-align: center; font-weight: bold;">
-          Github Profiles
-        </h2>
-        <h3 style ="background-color:#0e3967">
-          <a href="https://github.com/ChrisFort03" target="_blank" style="color: #c9e0fa">Chris</a>
-          <a href="https://github.com/brolano" target="_blank" style="color: #c9e0fa">Brian</a>
-          <a href="https://github.com/JPMill" target="_blank" style="color: #c9e0fa">Justin</a>
-          <a href="https://github.com/ejmaller7" target="_blank" style="color: #c9e0fa">Ethan</a>
-          <a href="https://github.com/kevinchau7" target="_blank" style="color: #c9e0fa">Kevin</a>
-        </h3>
-      </div>   
+      <footer style="height: 140px">
+        <div>
+          <h1 style="color: #fff; text-align: center; font-weight: bold">
+            Made by Team Null
+          </h1>
+          <h2 style="color: #fff; text-align: center; font-weight: bold;">
+            Github Profiles
+          </h2>
+          <h3 style ="background-color:#0e3967">
+            <a href="https://github.com/ChrisFort03" target="_blank" style="color: #c9e0fa">Chris</a>
+            <a href="https://github.com/brolano" target="_blank" style="color: #c9e0fa">Brian</a>
+            <a href="https://github.com/JPMill" target="_blank" style="color: #c9e0fa">Justin</a>
+            <a href="https://github.com/ejmaller7" target="_blank" style="color: #c9e0fa">Ethan</a>
+            <a href="https://github.com/kevinchau7" target="_blank" style="color: #c9e0fa">Kevin</a>
+          </h3>
+        </div>   
 
-    </article>
+      </article>
 
-    </footer>
+      </footer>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-      crossorigin="anonymous"
-    ></script>
-    <script src="./App/JavaScript/main.js"></script>
-    <script src="./App/JavaScript/months.js"></script>
+      <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"
+      ></script>
+      <script src="./App/JavaScript/main.js"></script>
+      <script src="./App/JavaScript/months.js"></script>
   </body>
 </html>

@@ -173,68 +173,68 @@ document.addEventListener('DOMContentLoaded', function () {
     monthSelect.addEventListener('change', function () {
         displayMonth(parseInt(monthSelect.value), parseInt(yearSelect.value));
 
-        // var img = document.getElementById("BackgroundImg");
-        // if (monthSelect.value == 0) {
-        //     img.style.backgroundImage = `url('https://img.freepik.com/premium-vector/vector-pattern-with-snowflakes-white-background-christmas-decorations_596424-38.jpg')`; 
-        //     img.style.backgroundRepeat = 'repeat';
-        //     img.style.backgroundSize = 'auto';
-        //     img.style.backgroundPosition = 'center'; 
-        //  } else if(monthSelect.value == 1) {
-        //     img.style.backgroundImage = `url('https://img.freepik.com/premium-vector/vector-illustration-small-red-pink-hearts-pattern-white-background_1220-2188.jpg')`; 
-        //     img.style.backgroundRepeat = 'repeat';
-        //     img.style.backgroundSize = 'auto';
-        //     img.style.backgroundPosition = 'center';  
-        //  } else if(monthSelect.value == 2) {
-        //     img.style.backgroundImage = `url('https://t4.ftcdn.net/jpg/03/20/97/63/360_F_320976376_vLghJE59lPz0i9LIwqAOE6tCw1oCwGMi.jpg')`; 
-        //     img.style.backgroundRepeat = 'repeat';
-        //     img.style.backgroundSize = 'auto';
-        //     img.style.backgroundPosition = 'center';   
-        //  } else if(monthSelect.value == 3) {
-        //     img.style.backgroundImage = `url('https://media.istockphoto.com/id/1277561237/vector/cartoon-raining-isolated-on-white-background.jpg?s=612x612&w=0&k=20&c=LRLddc_LhV0r8jIfn5DGu2yy_ii8cN-K9vH_aa0PHW4=')`; 
-        //     img.style.backgroundRepeat = 'repeat';
-        //     img.style.backgroundSize = 'auto';
-        //     img.style.backgroundPosition = 'center'; 
-        //  } else if(monthSelect.value == 4) {
-        //     img.style.backgroundImage = `url('https://img.freepik.com/premium-photo/there-are-many-different-flowers-white-background-generative-ai_958124-68312.jpg')`; 
-        //     img.style.backgroundRepeat = 'repeat';
-        //     img.style.backgroundSize = 'auto';
-        //     img.style.backgroundPosition = 'center';  
-        //  } else if(monthSelect.value == 5) {
-        //     img.style.backgroundImage = `url('https://static.vecteezy.com/system/resources/previews/029/219/378/non_2x/beach-ball-seamless-pattern-on-a-white-background-summer-holiday-theme-illustration-vector.jpg')`; 
-        //     img.style.backgroundRepeat = 'repeat';
-        //     img.style.backgroundSize = 'auto';
-        //     img.style.backgroundPosition = 'center'; 
-        //  } else if(monthSelect.value == 6) {
-        //     img.style.backgroundImage = `url('https://cdn.vectorstock.com/i/500p/11/18/colorful-fireworks-background-vector-4681118.jpg')`; 
-        //     img.style.backgroundRepeat = 'repeat';
-        //     img.style.backgroundSize = 'auto';
-        //     img.style.backgroundPosition = 'center';  
-        //  } else if(monthSelect.value == 7) {
-        //     img.style.backgroundImage = `url('https://png.pngtree.com/png-clipart/20230924/original/pngtree-school-supplies-pattern-on-white-background-with-rulers-pencils-and-markers-png-image_12845126.png')`; 
-        //     img.style.backgroundRepeat = 'repeat';
-        //     img.style.backgroundSize = 'auto';
-        //     img.style.backgroundPosition = 'center';  
-        //  } else if(monthSelect.value == 8) {
-        //     img.style.backgroundImage = `url('https://i.pinimg.com/736x/60/5a/b7/605ab77d69c61a8b498325a9b2054c0f.jpg')`; 
-        //     img.style.backgroundRepeat = 'repeat';
-        //     img.style.backgroundSize = 'auto';
-        //     img.style.backgroundPosition = 'center'; 
-        //  } else if(monthSelect.value == 9) {
-        //     img.style.backgroundImage = `url('https://img.freepik.com/premium-photo/seamless-pattern-halloween-pumpkins-white-background_212417-720.jpg')`; 
-        //     img.style.backgroundRepeat = 'repeat';
-        //     img.style.backgroundSize = 'auto';
-        //     img.style.backgroundPosition = 'center'; 
-        //  } else if(monthSelect.value == 10) {
-        //     img.style.backgroundImage = `url('https://media.istockphoto.com/id/818710928/vector/watercolor-autumn-set-of-leaves-branches-flowers-and-pumpkins-isolated-on-white-background.jpg?s=612x612&w=0&k=20&c=nw5V7jVDU5eN0ShZ56c3liR2Ic3uZNpYVGOPDH1jaWE=')`; 
-        //     img.style.backgroundRepeat = 'repeat';
-        //     img.style.backgroundSize = 'auto';
-        //     img.style.backgroundPosition = 'center';
-        //  } else if(monthSelect.value == 11) {
-        //     img.style.backgroundImage = `url('https://wallpapercave.com/wp/wp10333807.jpg')`; 
-        //     img.style.backgroundRepeat = 'repeat';
-        //     img.style.backgroundSize = 'auto';
-        //     img.style.backgroundPosition = 'center'; 
-        //  }
+        var img = document.getElementById("BackgroundImg");
+        if (monthSelect.value == 0) {
+            img.style.backgroundImage = `url('https://img.freepik.com/premium-vector/vector-pattern-with-snowflakes-white-background-christmas-decorations_596424-38.jpg')`; 
+            img.style.backgroundRepeat = 'repeat';
+            img.style.backgroundSize = 'auto';
+            img.style.backgroundPosition = 'center'; 
+         } else if(monthSelect.value == 1) {
+            img.style.backgroundImage = `url('https://img.freepik.com/premium-vector/vector-illustration-small-red-pink-hearts-pattern-white-background_1220-2188.jpg')`; 
+            img.style.backgroundRepeat = 'repeat';
+            img.style.backgroundSize = 'auto';
+            img.style.backgroundPosition = 'center';  
+         } else if(monthSelect.value == 2) {
+            img.style.backgroundImage = `url('https://t4.ftcdn.net/jpg/03/20/97/63/360_F_320976376_vLghJE59lPz0i9LIwqAOE6tCw1oCwGMi.jpg')`; 
+            img.style.backgroundRepeat = 'repeat';
+            img.style.backgroundSize = 'auto';
+            img.style.backgroundPosition = 'center';   
+         } else if(monthSelect.value == 3) {
+            img.style.backgroundImage = `url('https://media.istockphoto.com/id/1277561237/vector/cartoon-raining-isolated-on-white-background.jpg?s=612x612&w=0&k=20&c=LRLddc_LhV0r8jIfn5DGu2yy_ii8cN-K9vH_aa0PHW4=')`; 
+            img.style.backgroundRepeat = 'repeat';
+            img.style.backgroundSize = 'auto';
+            img.style.backgroundPosition = 'center'; 
+         } else if(monthSelect.value == 4) {
+            img.style.backgroundImage = `url('https://img.freepik.com/premium-photo/there-are-many-different-flowers-white-background-generative-ai_958124-68312.jpg')`; 
+            img.style.backgroundRepeat = 'repeat';
+            img.style.backgroundSize = 'auto';
+            img.style.backgroundPosition = 'center';  
+         } else if(monthSelect.value == 5) {
+            img.style.backgroundImage = `url('https://static.vecteezy.com/system/resources/previews/029/219/378/non_2x/beach-ball-seamless-pattern-on-a-white-background-summer-holiday-theme-illustration-vector.jpg')`; 
+            img.style.backgroundRepeat = 'repeat';
+            img.style.backgroundSize = 'auto';
+            img.style.backgroundPosition = 'center'; 
+         } else if(monthSelect.value == 6) {
+            img.style.backgroundImage = `url('https://cdn.vectorstock.com/i/500p/11/18/colorful-fireworks-background-vector-4681118.jpg')`; 
+            img.style.backgroundRepeat = 'repeat';
+            img.style.backgroundSize = 'auto';
+            img.style.backgroundPosition = 'center';  
+         } else if(monthSelect.value == 7) {
+            img.style.backgroundImage = `url('https://png.pngtree.com/png-clipart/20230924/original/pngtree-school-supplies-pattern-on-white-background-with-rulers-pencils-and-markers-png-image_12845126.png')`; 
+            img.style.backgroundRepeat = 'repeat';
+            img.style.backgroundSize = 'auto';
+            img.style.backgroundPosition = 'center';  
+         } else if(monthSelect.value == 8) {
+            img.style.backgroundImage = `url('https://i.pinimg.com/736x/60/5a/b7/605ab77d69c61a8b498325a9b2054c0f.jpg')`; 
+            img.style.backgroundRepeat = 'repeat';
+            img.style.backgroundSize = 'auto';
+            img.style.backgroundPosition = 'center'; 
+         } else if(monthSelect.value == 9) {
+            img.style.backgroundImage = `url('https://img.freepik.com/premium-photo/seamless-pattern-halloween-pumpkins-white-background_212417-720.jpg')`; 
+            img.style.backgroundRepeat = 'repeat';
+            img.style.backgroundSize = 'auto';
+            img.style.backgroundPosition = 'center'; 
+         } else if(monthSelect.value == 10) {
+            img.style.backgroundImage = `url('https://media.istockphoto.com/id/818710928/vector/watercolor-autumn-set-of-leaves-branches-flowers-and-pumpkins-isolated-on-white-background.jpg?s=612x612&w=0&k=20&c=nw5V7jVDU5eN0ShZ56c3liR2Ic3uZNpYVGOPDH1jaWE=')`; 
+            img.style.backgroundRepeat = 'repeat';
+            img.style.backgroundSize = 'auto';
+            img.style.backgroundPosition = 'center';
+         } else if(monthSelect.value == 11) {
+            img.style.backgroundImage = `url('https://wallpapercave.com/wp/wp10333807.jpg')`; 
+            img.style.backgroundRepeat = 'repeat';
+            img.style.backgroundSize = 'auto';
+            img.style.backgroundPosition = 'center'; 
+         }
     });
 
     yearSelect.addEventListener('change', function () {
