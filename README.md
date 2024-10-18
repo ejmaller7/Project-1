@@ -15,15 +15,30 @@ Our team work togeher to develop the front end project website consist of a cale
 
 ## Usage
 
-Example snapshots are presented as below: 
+Toggle the month, The Background pictures change 
+<p>
+<img src = "./Readmeimages/snapshot1.JPG" height = 60% width = 60%></p>
+
+Weather station - input city and give you the weather.
+<p>
+<img src = "./Readmeimages/snapshot2.JPG" height = 60% width = 60%></p>
+
+Built in planner
+<p><img src = "./Readmeimages/snapshot3.JPG" height = 60% width = 60%></p>
+
+Dark-light mode button will toggle the background color.
+<p><img src = "./Readmeimages/snapshot4.JPG" height = 60% width = 60%></p>
+
+Media Query:
+<p><img src = "./Readmeimages/snapshot5.JPG" height = 60% width = 60%></p>
 
 
 ## Credits
-Ethan Maller  https://github.com/ejmaller7
-Brian Solano https://github.com/brolano
-Christopher Fortier  https://github.com/ChrisFort03
-Justin Miller  https://github.com/JPMill
-Hon chau  https://github.com/kevinchau7
+ * Ethan Maller  https://github.com/ejmaller7
+ * Brian Solano https://github.com/brolano
+ * Christopher Fortier  https://github.com/ChrisFort03
+ * Justin Miller  https://github.com/JPMill
+ * Hon chau  https://github.com/kevinchau7
 
 Third-party tool:
 Bootstrap CSS
