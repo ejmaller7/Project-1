@@ -95,10 +95,15 @@ body {
 
 main {
     display: flex;
+    flex-wrap: wrap;
+    padding-right: 10%;
+    padding-left: 10%;
 }
 
 .section{
     display: flex;
+    flex-basis:500px;
+    flex-grow: 4;
     margin: 10px;
     margin-left: 20px;
     width: 65%; 
@@ -109,7 +114,6 @@ main {
 
 #calendar {
     display: inline-block;
-    margin-left: 90px;
     width: 100%;
     justify-content: center;
 }
@@ -219,6 +223,8 @@ h3 {
 
 #tasks {
     text-align: center;
+    flex-basis: 200px;
+    flex-grow: 1;
     display: inline-block;
     margin-top: 160px;
     width: 20%;
