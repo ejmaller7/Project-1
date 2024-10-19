@@ -31,7 +31,7 @@
       </header>
 
       <main id="BackgroundImg">
-        <section class="section">
+        <section class="section row justify-content-center">
           <article id="calendar">
               <label style="font-weight: bold;">Select a Month</label>
               <select id="monthSelect">
@@ -49,18 +49,21 @@
                   <option value="11" id="december">🎄December</option>
               </select>
     
-              <label style="font-weight: bold;">Select a Year</label>
+            <div class="form-group">  
+            <label for="yearSelect" style="font-weight: bold;">Select a Year</label>
               <select id="yearSelect">
                   <option value="2024">2024</option>
                   <option value="2025">2025</option>
                   <option value="2026">2026</option>
                   <option value="2027">2027</option>
               </select>
+            </div>
     
-              <h2 id="selectMonthYear"></h2>
+              <h2 id="selectMonthYear" class="text-center"></h2>
     
+              <div class="table-responsive">
               <table id="calendarTable">
-                  <thead>
+                  <thead class="thead-light">
                       <tr>
                           <th>Sunday</th>
                           <th>Monday</th>
@@ -73,6 +76,7 @@
                   </thead>
                   <tbody id="calendarBody"></tbody>
               </table>
+            </div>
           </article>
         </section>
     
