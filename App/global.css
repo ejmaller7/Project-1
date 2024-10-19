@@ -71,7 +71,7 @@ body {
 
 #weather {
     margin-top: 8px;
-    margin-bottom: 8px
+    margin-bottom: 8px;
     text-decoration: none;
     color: #fff;
     font-weight: bold;
@@ -126,7 +126,7 @@ main {
     width: 65%; 
     height: max-content;
     justify-content: space-between;
-    padding-right: 25px;
+    /* padding-right: 25px; */
 }
 
 #calendar {
@@ -241,7 +241,7 @@ h3 {
 #tasks {
     text-align: center;
     flex-basis: 200px;
-    flex-grow: 1;
+    flex-grow: 5;
     display: inline-block;
     margin-top: 160px;
     width: 20%;
@@ -378,6 +378,10 @@ footer div h3 {
 
 
 @media screen and (max-width: 1024px){
+    main {
+        padding-left:60px;
+        padding-right:60px;
+    }
     .header h1 {
         font-size: 40px;
     }
@@ -408,9 +412,31 @@ footer div h3 {
     #weather-info p{
         font-size: 12px;
     }
+    .section {
+        padding-right:0;
+        margin-left:10px;
+    }
+    .toDoList {
+        width: 400px;
+        margin-left: 50px;
+        margin-right: 50px;
+        padding-top: 25px;
+    }
+    #listStyle {
+        width: 400px;
+        height:500px
+    }
+    #tasks {
+        width: 400px;
+        margin-top: 25px;
+    }
 }
 
 @media screen and (max-width: 768px){
+    main {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
     .header h1 {
         font-size: 30px;
     }
@@ -441,11 +467,34 @@ footer div h3 {
     #weather-info p{
         font-size: 9px;
     }
+    .section {
+        padding-right:0;
+        margin-left:10px;
+    }
+    .toDoList {
+        width: 300px;
+        margin-left: 50px;
+        margin-right: 50px;
+        padding-top: 25px;
+    }
+    #listStyle {
+        width:300px;
+        height:450px
+    }
+    #tasks {
+        width: 300px;
+        margin-top: 25px;
+    }
 }
 
 @media screen and (max-width: 480px) {
+    main {
+        padding-left: 0;
+        padding-right: 0
+    }
     .header h1 {
-        font-size: 20px;
+        font-size: 22px;
+        width: 125px;
     }
     .header nav {
         width: 350px;
@@ -454,33 +503,42 @@ footer div h3 {
     #theme-toggle {
         width: 30px;
         height: 20px;
-        padding-right: 18px;
-        padding-left: 18px;
+        padding-right: 20px;
+        padding-left: 20px;
         font-size: 50%;
     }
     #weather {
         font-size: 9px;
     }
     #city-input {
-        height: 10px;
+        height: 14px;
         width:90px;
-        font-size: 9px;
+        font-size: 8px;
     }
     #city-form button {
-        height: 10px;
+        height: 14px;
         width: 50px;
         font-size: 6px;
     }
     #weather-info p{
         font-size: 6px;
     }
-    table {
-        max-width: 400px;
+    .section {
+        padding-right:0;
+        margin-left:10px;
     }
-    td {
-        max-width: 35px;
+    .toDoList {
+        width: 300px;
+        margin-left: 50px;
+        margin-right: 50px;
+        padding-top: 25px;
     }
-    tr {
-        max-width: 400px
+    #listStyle {
+        width:300px;
+        height:400px
+    }
+    #tasks {
+        width: 300px;
+        margin-top: 25px;
     }
 }
