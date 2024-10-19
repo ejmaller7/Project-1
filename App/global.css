@@ -1,10 +1,14 @@
 body {
     font-family: 'Times New Roman', Times, serif;
     transition: background-color 0.3s ease, color 0.3s ease;
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 .header {
     display: flex;
+    flex-grow: 1;
     align-items: center;
     justify-content: space-between;
     height: 125px;
@@ -16,22 +20,33 @@ body {
 
 .header h1 {
     display: flex;
+    flex-shrink: 1;
     align-items: center;
+    text-align: center;
     font-size: 50px;
     font-weight: bold;
-    padding-left: 40px;
+    padding-left: 3%;
     text-shadow: 3px 3px 8px black;
 }
 
 .header nav {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
+    justify-content: end;
     gap: 20px;
     padding-right: 20px;
+    ;
 }
 
 #city-form button:hover {
     box-shadow: 2px 2px 3px black;
+}
+
+#city-form {
+    display:flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #weather-info {
@@ -48,13 +63,15 @@ body {
     padding-right: 5px;
     text-align: center;
     margin-bottom: 0px;
-
+    font-size: clamp(8px, 4vw, 15px);
     font-weight: bold;
 
 }
 
 
 #weather {
+    margin-top: 8px;
+    margin-bottom: 8px
     text-decoration: none;
     color: #fff;
     font-weight: bold;
@@ -102,7 +119,7 @@ main {
 
 .section{
     display: flex;
-    flex-basis:500px;
+    /* flex-basis:300px; */
     flex-grow: 4;
     margin: 10px;
     margin-left: 20px;
@@ -126,10 +143,9 @@ main {
 }
 
 /* maybe? */
-#calendarTable {
+/* #calendarTable {
     box-shadow: 2px 2px 3px black;
-
-}
+} */
 
 #yearSelect, #monthSelect{
     text-align: center;
@@ -150,19 +166,20 @@ main {
 
 /* added */
 #selectMonthYear {
-    width: 550px;
+    width: clamp(200px, 40vw, 550px);
     margin: auto;
     border-left: 2px solid black;
     border-right: 2px solid black;
     border-top: 2px solid black;
     border-radius: 20px;
-    font-size: 400%;
+    font-size: clamp(40px, 5vw, 75px);
 }
 
 table {
     border-collapse: collapse;
     width: 100%;
     border: 2px solid black;
+    box-shadow: 2px 2px 3px black;
 }
 
 tr, th, td {
@@ -178,8 +195,8 @@ th {
 
 /* numbers in center? or left? */
 td {
-    width: 100px;
-    height: 100px;
+    width: clamp(25px, 50vw, 100px);
+    height: clamp(25px, 50vh, 100px);
     vertical-align: top;
     text-align: left;
     font-weight: normal;
@@ -240,7 +257,8 @@ h3 {
     width: 100%; 
     border: 2px solid black;
     box-shadow: 2px 2px 3px black;
-    margin-left: 80px;
+    margin-left: 10%;
+    margin-bottom: 5%;
 }
 
 #listStyle button {
@@ -354,4 +372,113 @@ footer div h3 {
     display: flex;
     justify-content: space-evenly;
     background-color:#0e3967;  
+}
+
+
+@media screen and (max-width: 1024px){
+    .header h1 {
+        font-size: 40px;
+    }
+    .header nav {
+        width: 600px;
+        gap: 6px;
+    }
+    #theme-toggle {
+        width: 30px;
+        height: 40px;
+        padding-right: 35px;
+        padding-left: 35px;
+        font-size: 76%;
+    }
+    #weather {
+        font-size: 15px;
+    }
+    #city-input {
+        height: 22px;
+        width:165px;
+        font-size: 13px;
+    }
+    #city-form button {
+        height: 22px;
+        width: 85px;
+        font-size: 11px;
+    }
+    #weather-info p{
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .header h1 {
+        font-size: 30px;
+    }
+    .header nav {
+        width: 500px;
+        gap: 5px;
+    }
+    #theme-toggle {
+        width: 30px;
+        height: 30px;
+        padding-right: 27px;
+        padding-left: 27px;
+        font-size: 65%;
+    }
+    #weather {
+        font-size: 11px;
+    }
+    #city-input {
+        height: 20px;
+        width:125px;
+        font-size: 11px;
+    }
+    #city-form button {
+        height: 20px;
+        width: 70px;
+        font-size: 9px;
+    }
+    #weather-info p{
+        font-size: 9px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .header h1 {
+        font-size: 20px;
+    }
+    .header nav {
+        width: 350px;
+        gap: 3px;
+    }
+    #theme-toggle {
+        width: 30px;
+        height: 20px;
+        padding-right: 18px;
+        padding-left: 18px;
+        font-size: 50%;
+    }
+    #weather {
+        font-size: 9px;
+    }
+    #city-input {
+        height: 10px;
+        width:90px;
+        font-size: 9px;
+    }
+    #city-form button {
+        height: 10px;
+        width: 50px;
+        font-size: 6px;
+    }
+    #weather-info p{
+        font-size: 6px;
+    }
+    table {
+        max-width: 400px;
+    }
+    td {
+        max-width: 35px;
+    }
+    tr {
+        max-width: 400px
+    }
 }
