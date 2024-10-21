@@ -5,8 +5,8 @@ Professional ReadMe
 
 Our team work togeher to develop the front end project website consist of a calendar, to do list and weather forcast station. Our team works together to brainstorm the idea through sketchboard and research. We work on the coding together through the VSO live sharing. 
 
- * Project Github Page: https://ejmaller7.github.io/Project-1/
- * Project Github Repo: https://github.com/ejmaller7/Project-1
+ * Project Github Page: https://ejmaller7.github.io/E-Planner/
+ * Project Github Repo: https://github.com/ejmaller7/E-Planner
 
 
 ## Installation
