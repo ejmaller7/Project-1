@@ -95,7 +95,6 @@ body {
     border-radius: 10%;
     cursor: pointer;
     box-shadow: 2px 2px 3px black; 
-    /* text-shadow: 1px 1px 1px #0e3967 */
 }
 
 #theme-toggle:hover {
@@ -119,14 +118,12 @@ main {
 
 .section{
     display: flex;
-    /* flex-basis:300px; */
     flex-grow: 4;
     margin: 10px;
     margin-left: 20px;
     width: 65%; 
     height: max-content;
     justify-content: space-between;
-    /* padding-right: 25px; */
 }
 
 #calendar {
@@ -142,29 +139,21 @@ main {
     border-radius: 20px;
 }
 
-/* maybe? */
-/* #calendarTable {
-    box-shadow: 2px 2px 3px black;
-} */
-
 #yearSelect, #monthSelect{
     text-align: center;
     margin-top: 5px;
 }
 
-/* added */
 #yearSelect:hover {
     box-shadow: 1px 1px 2px black;
     cursor: pointer;
 }
 
-/* added */
 #monthSelect:hover {
     box-shadow: 1px 1px 2px black;
     cursor: pointer;
 }
 
-/* added */
 #selectMonthYear {
     width: clamp(200px, 40vw, 550px);
     margin: auto;
@@ -193,7 +182,6 @@ th {
     border: 2px solid black
 }
 
-/* numbers in center? or left? */
 td {
     width: clamp(25px, 50vw, 100px);
     height: clamp(25px, 50vh, 100px);
@@ -208,7 +196,6 @@ td {
     box-shadow: 2px 2px 3px;
 }
 
-/* added */
 td:hover { 
     box-shadow: 2px 2px 3px black;
     font-weight: bold;
@@ -290,14 +277,12 @@ h3 {
 }
 
 body.light-mode #listStyle p::before {
-    /* content: "•"; */
     margin-right: 10px;
     margin-left: 20px;
     color:black
 }
 
 body.dark-mode #listStyle p::before {
-    /* content: "•"; */
     margin-right: 10px;
     margin-left: 20px;
     color:rgb(255, 255, 255)
