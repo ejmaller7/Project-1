@@ -41,8 +41,9 @@ Media Query:
  * Hon chau  https://github.com/kevinchau7
 
 Third-party tool:
-Bootstrap CSS
-OpenWeather API <a href="https://openweathermap.org/api">click here</a>
+1. Bootstrap CSS
+2. OpenWeather API <a href="https://openweathermap.org/api">website</a>
+3. toastr <a href="https://github.com/CodeSeven/toastr">github</a>
 
 ## License
 
