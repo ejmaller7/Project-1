@@ -42,6 +42,7 @@ Media Query:
 
 Third-party tool:
 Bootstrap CSS
+OpenWeather API <a href="https://openweathermap.org/api">click here</a>
 
 ## License
 
